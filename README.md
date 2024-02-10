@@ -1,6 +1,10 @@
 # LDAP Authentication Testing Repository
 
+![Visitor badge](https://visitor-badge.laobi.icu/badge?page_id=luisalejandrobf.LdapAuth&left_text=Views)
+
 [English](#ldap-authentication-testing-repository) | [Español](#repositorio-de-pruebas-de-autenticación-ldap)
+
+
 
 This repository contains code and resources related to testing LDAP authentication on a trial server online.
 
