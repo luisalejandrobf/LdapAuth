@@ -2,19 +2,19 @@ from ldap3 import Server, Connection, SIMPLE, SYNC, ALL, SUBTREE
 import getpass
 
 # Define LDAP server information
-ldap_server = 'javedir.javeriana.edu.co'
-ldap_port = 636
-bind_dn = 'cn=soter,ou=users,dc=javeriana.edu.co' # Verificar bind DN
-bind_password = 'aKcrK%0;8D42W"*'
+ldap_server = 'javedir.javeriana.edu.co' # Servidor produccion: javedir.javeriana.edu.co
+ldap_port = 389
+bind_dn = 'uid=soter,ou=pseudoAccounts,o=javeriana.edu.co,o=edu' # Verificar bind DN
+bind_password = 's1meXhwdJiEj10A'
 group_dn = 'cn=ingenieriasistemas.todos,ou=groups,o=javeriana.edu.co,o=edu'
 
 # Establish connection with LDAP server
-server = Server(ldap_server, port=ldap_port, use_ssl=True, get_info=ALL)
+server = Server(ldap_server, port=ldap_port, get_info=ALL)
 conn = Connection(server, user=bind_dn, password=bind_password, authentication=SIMPLE, auto_bind=True)
 
 # Request username and password via console
 username = input("Enter the username of the user: ")
-password = getpass.getpass("Enter the user's password: ")
+password = input("Enter the user's password: ")
 
 # Try to authenticate the user
 user_dn = f'uid={username},ou=people,o=javeriana.edu.co,o=edu'
